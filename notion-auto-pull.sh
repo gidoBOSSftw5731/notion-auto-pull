@@ -8,7 +8,7 @@ mkdir notion_backups 2>/dev/null
 cd notion_backups
 
 #get task
-task=`curl --header "Content-Type: application/json" --data '{"task":{"eventName":"exportSpace","request":{"spaceId":"${spaceid}","exportOptions":{"exportType":"markdown","timeZone":"America/New_York","locale":"en"}}}}' --cookie "token_v2=${token}" https://www.notion.so/api/v3/enqueueTask/ --output - --fail --silent --show-error`
+task=`curl --header "Content-Type: application/json" --data '{"task":{"eventName":"exportSpace","request":{"spaceId":"'${spaceid}'","exportOptions":{"exportType":"markdown","timeZone":"America/New_York","locale":"en"}}}}' --cookie "token_v2=${token}" https://www.notion.so/api/v3/enqueueTask/ --output - --fail --silent --show-error`
 
 #if this fails, your token is probably wrong, but do check the http error, 401 is forbidden which is token issue.
 if [ "$?" != 0 ]
