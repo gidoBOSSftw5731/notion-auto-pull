@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export token={TOKEN}
-export spaceid={SPACEID}
+export token="{TOKEN}"
+export spaceid="{SPACEID}"
 
 cd
 mkdir notion_backups 2>/dev/null
